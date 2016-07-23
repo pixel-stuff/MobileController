@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Unity/ludum-dare-32-PixelStuff/Assets/Resources/Sounds/beaver_eat.mp3.meta
+guid: 7a3b07ad6ead14c6db9e6560a2da42c7
+timeCreated: 1429568541
+=======
+guid: 7b491c75fa9b9be4d9a950ed2825440c
+timeCreated: 1429568194
+>>>>>>> origin/master:Unity/ludum-dare-32-PixelStuff/Assets/Resources/Sounds/beaver_eat.mp3.meta
+licenseType: Free
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
