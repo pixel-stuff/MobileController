@@ -10,15 +10,26 @@ public enum PressedComportement{
 
 public class VirtualButton : MonoBehaviour {
 
+	
+	public PressedComportement m_pressedComportement = PressedComportement.None;
+
+	//Use these variable to swap image
 	[SerializeField]
 	private Sprite m_imagePressed;
 	private Sprite m_imageIddle;
 
-	public PressedComportement m_pressedComportement = PressedComportement.None;
+	//use this variable to change alpha image
+	private float m_alphaIddle = 0f;
 
 	void Start(){
-		if (m_pressedComportement == PressedComportement.SpriteSwap) {
+		switch(m_pressedComportement){
+		case PressedComportement.SpriteSwap:
 			m_imageIddle = this.GetComponent<Image> ().sprite;
+			break;
+		case PressedComportement.Alpha:
+			m_alphaIddle = this.GetComponent<Image> ().color.a;
+			Debug.Log("alpha : " + m_alphaIddle);
+			break;
 		}
 	}
 
@@ -33,9 +44,15 @@ public class VirtualButton : MonoBehaviour {
 			break;
 
 		case PressedComportement.Alpha:
-
+			Color color = this.GetComponent<Image> ().color;
+			if (isTriggerEnter) {
+				color.a = 1.0f;
+				this.GetComponent<Image> ().color = color;
+			} else {
+				color.a = m_alphaIddle;
+				this.GetComponent<Image> ().color = color;
+			}
 			break;
-
 		}
 	}
 
