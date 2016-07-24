@@ -28,7 +28,6 @@ public class VirtualButton : MonoBehaviour {
 			break;
 		case PressedComportement.Alpha:
 			m_alphaIddle = this.GetComponent<Image> ().color.a;
-			Debug.Log("alpha : " + m_alphaIddle);
 			break;
 		}
 	}

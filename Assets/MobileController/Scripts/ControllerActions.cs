@@ -10,6 +10,11 @@ public class ControllerActions : MonoBehaviour {
 			//If I am the first instance, make me the Singleton
 			m_instance = this;
 			DontDestroyOnLoad(this.gameObject);
+			if (m_hideController) {
+				m_pad.SetActive (false);
+				m_joystick.SetActive (false);
+				m_buttons.SetActive (false);
+			}
 		}else{
 			//If a Singleton already exists and you find
 			//another reference in scene, destroy it!
@@ -41,8 +46,24 @@ public class ControllerActions : MonoBehaviour {
 	public Action BTriggerDown;
 	public Action XTriggerUp;
 	public Action XTriggerDown;
-
 	#endregion Actions
+
+	#region Utils
+	[SerializeField]
+	private bool m_hideController = false;
+	[SerializeField]
+	private GameObject m_pad;
+	[SerializeField]
+	private GameObject m_joystick;
+	[SerializeField]
+	private GameObject m_buttons;
+
+	public void ActivateController(){
+		m_pad.SetActive (true);
+		m_joystick.SetActive (true);
+		m_buttons.SetActive (true);
+	}
+	#endregion Utils
 
 	#region Controller
 	public void UpTrigger(bool isTriggerEnter){
