@@ -83,7 +83,7 @@ public class MobileController : MonoBehaviour {
 	#region Controller
 	public void UpTrigger(bool isTriggerEnter){
 		if (isTriggerEnter) {
-			if (Input.touchCount != 0) {
+			if (CanBeTriggerEnter()) {
 				m_isUpBeingPressed = isTriggerEnter;
 				if (OnUpTriggerEnter != null) {
 					OnUpTriggerEnter ();
@@ -99,7 +99,7 @@ public class MobileController : MonoBehaviour {
 
 	public void RightTrigger(bool isTriggerEnter){
 		if (isTriggerEnter) {
-			if (Input.touchCount != 0) {
+			if (CanBeTriggerEnter()) {
 				m_isRightBeingPressed = isTriggerEnter;
 				if (OnRightTriggerEnter != null) {
 					OnRightTriggerEnter ();
@@ -115,7 +115,7 @@ public class MobileController : MonoBehaviour {
 
 	public void DownTrigger(bool isTriggerEnter){
 		if (isTriggerEnter) {
-			if (Input.touchCount != 0) {
+			if (CanBeTriggerEnter()) {
 				m_isDownBeingPressed = isTriggerEnter;
 				if (OnDownTriggerEnter != null) {
 					OnDownTriggerEnter ();
@@ -131,7 +131,7 @@ public class MobileController : MonoBehaviour {
 
 	public void LeftTrigger(bool isTriggerEnter){
 		if (isTriggerEnter) {
-			if (Input.touchCount != 0) {
+			if (CanBeTriggerEnter()) {
 				m_isLeftBeingPressed = isTriggerEnter;
 				if (OnLeftTriggerEnter != null) {
 					OnLeftTriggerEnter ();
@@ -147,7 +147,7 @@ public class MobileController : MonoBehaviour {
 
 	public void ATrigger(bool isTriggerEnter){
 		if (isTriggerEnter) {
-			if (Input.touchCount != 0) {
+			if (CanBeTriggerEnter()) {
 				m_isABeingPressed = isTriggerEnter;
 				if (OnATriggerEnter != null) {
 					OnATriggerEnter ();
@@ -163,7 +163,7 @@ public class MobileController : MonoBehaviour {
 
 	public void BTrigger(bool isTriggerEnter){
 		if (isTriggerEnter) {
-			if (Input.touchCount != 0) {
+			if (CanBeTriggerEnter()) {
 				m_isBBeingPressed = isTriggerEnter;
 				if (OnBTriggerEnter != null) {
 					OnBTriggerEnter ();
@@ -179,7 +179,7 @@ public class MobileController : MonoBehaviour {
 
 	public void XTrigger(bool isTriggerEnter){
 		if (isTriggerEnter) {
-			if (Input.touchCount != 0) {
+			if (CanBeTriggerEnter()) {
 				m_isXBeingPressed = isTriggerEnter;
 				if (OnXTriggerEnter != null) {
 					OnXTriggerEnter ();
@@ -264,6 +264,18 @@ public class MobileController : MonoBehaviour {
 			if (LeftTriggered != null) {
 				LeftTriggered ();
 			}
+		}
+	}
+
+	private bool CanBeTriggerEnter(){
+		if (Input.touchSupported) {
+			if (Input.touchCount != 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return true;
 		}
 	}
 	#endregion Controller
