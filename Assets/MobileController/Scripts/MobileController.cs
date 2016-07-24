@@ -2,9 +2,9 @@
 using System.Collections;
 using System;
 
-public class ControllerActions : MonoBehaviour {
+public class MobileController : MonoBehaviour {
 	#region Singleton
-	public static ControllerActions m_instance;
+	public static MobileController m_instance;
 	void Awake(){
 		if(m_instance == null){
 			//If I am the first instance, make me the Singleton
@@ -58,7 +58,7 @@ public class ControllerActions : MonoBehaviour {
 	[SerializeField]
 	private GameObject m_buttons;
 
-	public void ActivateController(){
+	public void ShowController(){
 		m_pad.SetActive (true);
 		m_joystick.SetActive (true);
 		m_buttons.SetActive (true);

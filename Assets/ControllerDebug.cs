@@ -12,26 +12,26 @@ public class ControllerDebug : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		ControllerActions.m_instance.UpTriggerEnter += UpUpdateEnter;
-		ControllerActions.m_instance.UpTriggerExit += UpUpdateExit;
-		ControllerActions.m_instance.RightTriggerEnter += RightUpdateEnter;
-		ControllerActions.m_instance.RightTriggerExit += RightUpdateExit;
-		ControllerActions.m_instance.DownTriggerEnter += DownUpdateEnter;
-		ControllerActions.m_instance.DownTriggerExit += DownUpdateExit;
-		ControllerActions.m_instance.LeftTriggerEnter += LeftUpdateEnter;
-		ControllerActions.m_instance.LeftTriggerExit += LeftUpdateExit;
-		ControllerActions.m_instance.ATriggerEnter += AUpdateEnter;
-		ControllerActions.m_instance.ATriggerEnter += AUpdateExit;
-		ControllerActions.m_instance.BTriggerEnter += BUpdateEnter;
-		ControllerActions.m_instance.BTriggerExit += BUpdateExit;
-		ControllerActions.m_instance.XTriggerEnter += XUpdateEnter;
-		ControllerActions.m_instance.XTriggerExit += XUpdateExit;
-		ControllerActions.m_instance.ATriggerDown += AUpdateDown;
-		ControllerActions.m_instance.ATriggerUp += AUpdateUp;
-		ControllerActions.m_instance.BTriggerDown += BUpdateDown;
-		ControllerActions.m_instance.BTriggerUp += BUpdateUp;
-		ControllerActions.m_instance.XTriggerDown += XUpdateDown;
-		ControllerActions.m_instance.XTriggerUp += XUpdateUp;
+		MobileController.m_instance.UpTriggerEnter += UpUpdateEnter;
+		MobileController.m_instance.UpTriggerExit += UpUpdateExit;
+		MobileController.m_instance.RightTriggerEnter += RightUpdateEnter;
+		MobileController.m_instance.RightTriggerExit += RightUpdateExit;
+		MobileController.m_instance.DownTriggerEnter += DownUpdateEnter;
+		MobileController.m_instance.DownTriggerExit += DownUpdateExit;
+		MobileController.m_instance.LeftTriggerEnter += LeftUpdateEnter;
+		MobileController.m_instance.LeftTriggerExit += LeftUpdateExit;
+		MobileController.m_instance.ATriggerEnter += AUpdateEnter;
+		MobileController.m_instance.ATriggerEnter += AUpdateExit;
+		MobileController.m_instance.BTriggerEnter += BUpdateEnter;
+		MobileController.m_instance.BTriggerExit += BUpdateExit;
+		MobileController.m_instance.XTriggerEnter += XUpdateEnter;
+		MobileController.m_instance.XTriggerExit += XUpdateExit;
+		MobileController.m_instance.ATriggerDown += AUpdateDown;
+		MobileController.m_instance.ATriggerUp += AUpdateUp;
+		MobileController.m_instance.BTriggerDown += BUpdateDown;
+		MobileController.m_instance.BTriggerUp += BUpdateUp;
+		MobileController.m_instance.XTriggerDown += XUpdateDown;
+		MobileController.m_instance.XTriggerUp += XUpdateUp;
 	}
 	
 	void UpUpdateEnter(){

@@ -304,10 +304,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 192432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e755bb660ad4248db8ea8041b46bc771, type: 3}
+  m_Script: {fileID: 11500000, guid: f35a2e0f43d724a73aa13bd86b00020e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_hideController: 1
+  m_hideController: 0
   m_pad: {fileID: 184116}
   m_joystick: {fileID: 140630}
   m_buttons: {fileID: 103860}
