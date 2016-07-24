@@ -36,7 +36,9 @@ public class VirtualButton : MonoBehaviour {
 		switch(m_pressedComportement){
 		case PressedComportement.SpriteSwap:
 			if (isTriggerEnter) {
-				this.GetComponent<Image> ().sprite = m_imagePressed;
+				if (Input.touchCount != 0) {
+					this.GetComponent<Image> ().sprite = m_imagePressed;
+				}
 			} else {
 				this.GetComponent<Image> ().sprite = m_imageIddle;
 			}
@@ -45,8 +47,10 @@ public class VirtualButton : MonoBehaviour {
 		case PressedComportement.Alpha:
 			Color color = this.GetComponent<Image> ().color;
 			if (isTriggerEnter) {
-				color.a = 1.0f;
-				this.GetComponent<Image> ().color = color;
+				if (Input.touchCount != 0) {
+					color.a = 1.0f;
+					this.GetComponent<Image> ().color = color;
+				}
 			} else {
 				color.a = m_alphaIddle;
 				this.GetComponent<Image> ().color = color;

@@ -25,27 +25,42 @@ public class MobileController : MonoBehaviour {
 	#endregion Singleton
 
 	#region Actions //Subscrib here to get action
-	public Action UpTriggerEnter;
-	public Action UpTriggerExit;
-	public Action DownTriggerEnter;
-	public Action DownTriggerExit;
-	public Action RightTriggerEnter;
-	public Action RightTriggerExit;
-	public Action LeftTriggerEnter;
-	public Action LeftTriggerExit;
+	public Action OnUpTriggerEnter;
+	public Action OnUpTriggerExit;
+	public Action UpTriggered;
+	public Action OnDownTriggerEnter;
+	public Action OnDownTriggerExit;
+	public Action DownTriggered;
+	public Action OnRightTriggerEnter;
+	public Action OnRightTriggerExit;
+	public Action RightTriggered;
+	public Action OnLeftTriggerEnter;
+	public Action OnLeftTriggerExit;
+	public Action LeftTriggered;
 
-	public Action ATriggerExit;
-	public Action ATriggerEnter;
-	public Action BTriggerExit;
-	public Action BTriggerEnter;
-	public Action XTriggerExit;
-	public Action XTriggerEnter;
-	public Action ATriggerUp;
-	public Action ATriggerDown;
-	public Action BTriggerUp;
-	public Action BTriggerDown;
-	public Action XTriggerUp;
-	public Action XTriggerDown;
+	public Action OnATriggerExit;
+	public Action OnATriggerEnter;
+	public Action ATriggered;
+	public Action OnBTriggerExit;
+	public Action OnBTriggerEnter;
+	public Action BTriggered;
+	public Action OnXTriggerExit;
+	public Action OnXTriggerEnter;
+	public Action XTriggered;
+	public Action OnATriggerUp;
+	public Action OnATriggerDown;
+	public Action OnBTriggerUp;
+	public Action OnBTriggerDown;
+	public Action OnXTriggerUp;
+	public Action OnXTriggerDown;
+
+	private bool m_isABeingPressed = false;
+	private bool m_isBBeingPressed = false;
+	private bool m_isXBeingPressed = false;
+	private bool m_isUpBeingPressed = false;
+	private bool m_isRightBeingPressed = false;
+	private bool m_isDownBeingPressed = false;
+	private bool m_isLeftBeingPressed = false;
 	#endregion Actions
 
 	#region Utils
@@ -68,121 +83,186 @@ public class MobileController : MonoBehaviour {
 	#region Controller
 	public void UpTrigger(bool isTriggerEnter){
 		if (isTriggerEnter) {
-			if (UpTriggerEnter != null) {
-				UpTriggerEnter ();
+			if (Input.touchCount != 0) {
+				m_isUpBeingPressed = isTriggerEnter;
+				if (OnUpTriggerEnter != null) {
+					OnUpTriggerEnter ();
+				}
 			}
 		} else {
-			if (UpTriggerExit != null) {
-				UpTriggerExit ();
+			m_isUpBeingPressed = isTriggerEnter;
+			if (OnUpTriggerExit != null) {
+				OnUpTriggerExit ();
 			}
 		}
 	}
 
 	public void RightTrigger(bool isTriggerEnter){
 		if (isTriggerEnter) {
-			if (RightTriggerEnter != null) {
-				RightTriggerEnter ();
+			if (Input.touchCount != 0) {
+				m_isRightBeingPressed = isTriggerEnter;
+				if (OnRightTriggerEnter != null) {
+					OnRightTriggerEnter ();
+				}
 			}
 		} else {
-			if (RightTriggerExit != null) {
-				RightTriggerExit ();
+			m_isRightBeingPressed = isTriggerEnter;
+			if (OnRightTriggerExit != null) {
+				OnRightTriggerExit ();
 			}
 		}
 	}
 
 	public void DownTrigger(bool isTriggerEnter){
 		if (isTriggerEnter) {
-			if (DownTriggerEnter != null) {
-				DownTriggerEnter ();
+			if (Input.touchCount != 0) {
+				m_isDownBeingPressed = isTriggerEnter;
+				if (OnDownTriggerEnter != null) {
+					OnDownTriggerEnter ();
+				}
 			}
 		} else {
-			if (DownTriggerExit != null) {
-				DownTriggerExit ();
+			m_isDownBeingPressed = isTriggerEnter;
+			if (OnDownTriggerExit != null) {
+				OnDownTriggerExit ();
 			}
 		}
 	}
 
 	public void LeftTrigger(bool isTriggerEnter){
 		if (isTriggerEnter) {
-			if (LeftTriggerEnter != null) {
-				LeftTriggerEnter ();
+			if (Input.touchCount != 0) {
+				m_isLeftBeingPressed = isTriggerEnter;
+				if (OnLeftTriggerEnter != null) {
+					OnLeftTriggerEnter ();
+				}
 			}
 		} else {
-			if (LeftTriggerExit != null) {
-				LeftTriggerExit ();
+			m_isLeftBeingPressed = isTriggerEnter;
+			if (OnLeftTriggerExit != null) {
+				OnLeftTriggerExit ();
 			}
 		}
 	}
 
-
 	public void ATrigger(bool isTriggerEnter){
 		if (isTriggerEnter) {
-			if (ATriggerEnter != null) {
-				ATriggerEnter ();
+			if (Input.touchCount != 0) {
+				m_isABeingPressed = isTriggerEnter;
+				if (OnATriggerEnter != null) {
+					OnATriggerEnter ();
+				}
 			}
 		} else {
-			if (ATriggerExit != null) {
-				ATriggerExit ();
+			m_isABeingPressed = isTriggerEnter;
+			if (OnATriggerExit != null) {
+				OnATriggerExit ();
 			}
 		}
 	}
 
 	public void BTrigger(bool isTriggerEnter){
 		if (isTriggerEnter) {
-			if (BTriggerEnter != null) {
-				BTriggerEnter ();
+			if (Input.touchCount != 0) {
+				m_isBBeingPressed = isTriggerEnter;
+				if (OnBTriggerEnter != null) {
+					OnBTriggerEnter ();
+				}
 			}
 		} else {
-			if (BTriggerExit != null) {
-				BTriggerExit ();
+			m_isBBeingPressed = isTriggerEnter;
+			if (OnBTriggerExit != null) {
+				OnBTriggerExit ();
 			}
 		}
 	}
 
 	public void XTrigger(bool isTriggerEnter){
 		if (isTriggerEnter) {
-			if (XTriggerEnter != null) {
-				XTriggerEnter ();
+			if (Input.touchCount != 0) {
+				m_isXBeingPressed = isTriggerEnter;
+				if (OnXTriggerEnter != null) {
+					OnXTriggerEnter ();
+				}
 			}
 		} else {
-			if (XTriggerExit != null) {
-				XTriggerExit ();
+			m_isXBeingPressed = isTriggerEnter;
+			if (OnXTriggerExit != null) {
+				OnXTriggerExit ();
 			}
 		}
 	}
 
 	public void AButton(bool isTriggerDown){
 		if (isTriggerDown) {
-			if (ATriggerDown != null) {
-				ATriggerDown ();
+			if (OnATriggerDown != null) {
+				OnATriggerDown ();
 			}
 		} else {
-			if (ATriggerUp != null) {
-				ATriggerUp ();
+			if (OnATriggerUp != null) {
+				OnATriggerUp ();
 			}
 		}
 	}
 
 	public void BButton(bool isTriggerDown){
 		if (isTriggerDown) {
-			if (BTriggerDown != null) {
-				BTriggerDown ();
+			if (OnBTriggerDown != null) {
+				OnBTriggerDown ();
 			}
 		} else {
-			if (BTriggerUp != null) {
-				BTriggerUp ();
+			if (OnBTriggerUp != null) {
+				OnBTriggerUp ();
 			}
 		}
 	}
 
 	public void XButton(bool isTriggerDown){
 		if (isTriggerDown) {
-			if (XTriggerDown != null) {
-				XTriggerDown ();
+			if (OnXTriggerDown != null) {
+				OnXTriggerDown ();
 			}
 		} else {
-			if (XTriggerUp != null) {
-				XTriggerUp ();
+			if (OnXTriggerUp != null) {
+				OnXTriggerUp ();
+			}
+		}
+	}
+
+	void FixedUpdate(){
+		if (m_isABeingPressed) {
+			if (ATriggered != null) {
+				ATriggered ();
+			}
+		}
+		if (m_isBBeingPressed) {
+			if (BTriggered != null) {
+				BTriggered ();
+			}
+		}
+		if (m_isXBeingPressed) {
+			if (XTriggered != null) {
+				XTriggered ();
+			}
+		}
+		if (m_isUpBeingPressed) {
+			if (UpTriggered != null) {
+				UpTriggered ();
+			}
+		}
+		if (m_isRightBeingPressed) {
+			if (RightTriggered != null) {
+				RightTriggered ();
+			}
+		}
+		if (m_isDownBeingPressed) {
+			if (DownTriggered != null) {
+				DownTriggered ();
+			}
+		}
+		if (m_isLeftBeingPressed) {
+			if (LeftTriggered != null) {
+				LeftTriggered ();
 			}
 		}
 	}

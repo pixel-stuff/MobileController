@@ -12,28 +12,32 @@ public class ControllerDebug : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		MobileController.m_instance.UpTriggerEnter += UpUpdateEnter;
-		MobileController.m_instance.UpTriggerExit += UpUpdateExit;
-		MobileController.m_instance.RightTriggerEnter += RightUpdateEnter;
-		MobileController.m_instance.RightTriggerExit += RightUpdateExit;
-		MobileController.m_instance.DownTriggerEnter += DownUpdateEnter;
-		MobileController.m_instance.DownTriggerExit += DownUpdateExit;
-		MobileController.m_instance.LeftTriggerEnter += LeftUpdateEnter;
-		MobileController.m_instance.LeftTriggerExit += LeftUpdateExit;
-		MobileController.m_instance.ATriggerEnter += AUpdateEnter;
-		MobileController.m_instance.ATriggerEnter += AUpdateExit;
-		MobileController.m_instance.BTriggerEnter += BUpdateEnter;
-		MobileController.m_instance.BTriggerExit += BUpdateExit;
-		MobileController.m_instance.XTriggerEnter += XUpdateEnter;
-		MobileController.m_instance.XTriggerExit += XUpdateExit;
-		MobileController.m_instance.ATriggerDown += AUpdateDown;
-		MobileController.m_instance.ATriggerUp += AUpdateUp;
-		MobileController.m_instance.BTriggerDown += BUpdateDown;
-		MobileController.m_instance.BTriggerUp += BUpdateUp;
-		MobileController.m_instance.XTriggerDown += XUpdateDown;
-		MobileController.m_instance.XTriggerUp += XUpdateUp;
+		MobileController.m_instance.OnUpTriggerEnter += UpUpdateEnter;
+		MobileController.m_instance.OnUpTriggerExit += UpUpdateExit;
+		MobileController.m_instance.OnRightTriggerEnter += RightUpdateEnter;
+		MobileController.m_instance.OnRightTriggerExit += RightUpdateExit;
+		MobileController.m_instance.OnDownTriggerEnter += DownUpdateEnter;
+		MobileController.m_instance.OnDownTriggerExit += DownUpdateExit;
+		MobileController.m_instance.OnLeftTriggerEnter += LeftUpdateEnter;
+		MobileController.m_instance.OnLeftTriggerExit += LeftUpdateExit;
+		MobileController.m_instance.OnATriggerEnter += AUpdateEnter;
+		MobileController.m_instance.OnATriggerExit += AUpdateExit;
+		MobileController.m_instance.OnBTriggerEnter += BUpdateEnter;
+		MobileController.m_instance.OnBTriggerExit += BUpdateExit;
+		MobileController.m_instance.OnXTriggerEnter += XUpdateEnter;
+		MobileController.m_instance.OnXTriggerExit += XUpdateExit;
+		MobileController.m_instance.OnATriggerDown += AUpdateDown;
+		MobileController.m_instance.OnATriggerUp += AUpdateUp;
+		MobileController.m_instance.OnBTriggerDown += BUpdateDown;
+		MobileController.m_instance.OnBTriggerUp += BUpdateUp;
+		MobileController.m_instance.OnXTriggerDown += XUpdateDown;
+		MobileController.m_instance.OnXTriggerUp += XUpdateUp;
+
+		MobileController.m_instance.ATriggered += AUpdateTriggered;
 	}
-	
+
+
+
 	void UpUpdateEnter(){
 		m_textdebug.text = "UpEnter";
 		Debug.Log ("UpEnter");
@@ -74,14 +78,31 @@ public class ControllerDebug : MonoBehaviour {
 		Debug.Log ("LeftExit");
 	}
 
+
+
 	void AUpdateEnter(){
 		m_textdebug.text = "AEnter";
-		Debug.Log ("AEnter");
+		Debug.Log ("1 - AEnter");
 	}
 
 	void AUpdateExit(){
 		m_textdebug.text = "AExit";
-		Debug.Log ("AExit");
+		Debug.Log ("2 - AExit");
+	}
+
+	void AUpdateTriggered(){
+		Debug.Log ("0 - A Triggered");
+	}
+
+
+	void AUpdateDown(){
+		m_text2debug.text = "ADown";
+		Debug.Log ("3 - ADown");
+	}
+
+	void AUpdateUp(){
+		m_text2debug.text = "AUp";
+		Debug.Log ("4 - AUp");
 	}
 
 	void BUpdateEnter(){
@@ -104,15 +125,6 @@ public class ControllerDebug : MonoBehaviour {
 		Debug.Log ("XExit");
 	}
 
-	void AUpdateDown(){
-		m_text2debug.text = "ADown";
-		Debug.Log ("ADown");
-	}
-
-	void AUpdateUp(){
-		m_text2debug.text = "AUp";
-		Debug.Log ("AUp");
-	}
 
 	void BUpdateDown(){
 		m_text2debug.text = "BDown";
