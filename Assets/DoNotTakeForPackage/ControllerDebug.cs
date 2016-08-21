@@ -40,42 +40,42 @@ public class ControllerDebug : MonoBehaviour {
 
 	void UpUpdateEnter(){
 		m_textdebug.text = "UpEnter";
-		Debug.Log ("UpEnter");
+		//Debug.Log ("UpEnter");
 	}
 
 	void UpUpdateExit(){
 		m_textdebug.text = "UpExit";
-		Debug.Log ("UpExit");
+		//Debug.Log ("UpExit");
 	}
 
 	void RightUpdateEnter(){
 		m_textdebug.text = "RightEnter";
-		Debug.Log ("RightEnter");
+		//Debug.Log ("RightEnter");
 	}
 
 	void RightUpdateExit(){
 		m_textdebug.text = "RightExit";
-		Debug.Log ("RightExit");
+		//Debug.Log ("RightExit");
 	}
 
 	void DownUpdateEnter(){
 		m_textdebug.text = "DownEnter";
-		Debug.Log ("DownEnter");
+		//Debug.Log ("DownEnter");
 	}
 
 	void DownUpdateExit(){
 		m_textdebug.text = "DownExit";
-		Debug.Log ("DownExit");
+		//Debug.Log ("DownExit");
 	}
 
 	void LeftUpdateEnter(){
 		m_textdebug.text = "LeftEnter";
-		Debug.Log ("LeftEnter");
+		//Debug.Log ("LeftEnter");
 	}
 
 	void LeftUpdateExit(){
 		m_textdebug.text = "LeftExit";
-		Debug.Log ("LeftExit");
+		//Debug.Log ("LeftExit");
 	}
 
 

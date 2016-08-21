@@ -41,8 +41,8 @@ GameObject:
   m_Component:
   - 224: {fileID: 22455074}
   - 222: {fileID: 22249228}
-  - 114: {fileID: 11410816}
   - 114: {fileID: 11437338}
+  - 114: {fileID: 11466188}
   m_Layer: 5
   m_Name: Joystick
   m_TagString: Untagged
@@ -336,33 +336,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_pressedComportement: 2
   m_imagePressed: {fileID: 0}
---- !u!114 &11410816
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 974c5260495614d0b958e9490bbb14a7, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
 --- !u!114 &11418988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -804,6 +777,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae52e04083d245ec92ee83f38cd216d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_joystickBackground: {fileID: 11466188}
+  m_joystick: {fileID: 11426328}
+  InputDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &11445708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1190,6 +1166,33 @@ MonoBehaviour:
   m_pad: {fileID: 176402}
   m_joystick: {fileID: 114548}
   m_buttons: {fileID: 152540}
+--- !u!114 &11466188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 114548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 974c5260495614d0b958e9490bbb14a7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &11468302
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1739,7 +1742,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 98, y: 98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22431674
@@ -1833,11 +1836,11 @@ RectTransform:
   - {fileID: 22439806}
   m_Father: {fileID: 22455482}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 100, y: 80}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -352, y: -197}
   m_SizeDelta: {x: 208, y: 208}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!224 &22455230
 RectTransform:
   m_ObjectHideFlags: 1
