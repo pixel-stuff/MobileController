@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 public class VirtualJoystick : MonoBehaviour,IDragHandler, IPointerUpHandler, IPointerDownHandler {
 	public Image m_joystickBackground;
 	public Image m_joystick;
 
 	public Vector3 InputDirection ;
+	public Action<Vector2> OnChangeDirection;
 
 	void Start(){
 
@@ -34,7 +36,9 @@ public class VirtualJoystick : MonoBehaviour,IDragHandler, IPointerUpHandler, IP
 
 		InputDirection = new Vector3 (x,y,0);
 		InputDirection = (InputDirection.magnitude > 1) ? InputDirection.normalized : InputDirection;
-
+		if (OnChangeDirection != null) {
+			OnChangeDirection(new Vector2(InputDirection.x,InputDirection.y));
+		}
 		//to define the area in which joystick can move around
 		m_joystick.rectTransform.anchoredPosition = new Vector3 (InputDirection.x * (m_joystickBackground.rectTransform.sizeDelta.x/3)
 			,InputDirection.y * (m_joystickBackground.rectTransform.sizeDelta.y)/3);

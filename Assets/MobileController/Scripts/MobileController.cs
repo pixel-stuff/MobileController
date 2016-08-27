@@ -15,6 +15,7 @@ public class MobileController : MonoBehaviour {
 				m_joystick.SetActive (false);
 				m_buttons.SetActive (false);
 			}
+			m_joystick.GetComponent<VirtualJoystick> ().OnChangeDirection += HandleChangeDirection;
 		}else{
 			//If a Singleton already exists and you find
 			//another reference in scene, destroy it!
@@ -53,6 +54,8 @@ public class MobileController : MonoBehaviour {
 	public Action OnBTriggerDown;
 	public Action OnXTriggerUp;
 	public Action OnXTriggerDown;
+
+	public Action<Vector2> OnVirtualJoystick;
 
 	private bool m_isABeingPressed = false;
 	private bool m_isBBeingPressed = false;
@@ -276,6 +279,12 @@ public class MobileController : MonoBehaviour {
 			}
 		} else {
 			return true;
+		}
+	}
+
+	public void HandleChangeDirection(Vector2 vect){
+		if (OnVirtualJoystick != null) {
+			OnVirtualJoystick (vect);
 		}
 	}
 	#endregion Controller
